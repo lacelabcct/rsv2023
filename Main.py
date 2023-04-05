@@ -1,4 +1,4 @@
-from WebSCR import scraping
+from laceRSV23 import scraping
 import streamlit as st
 import pandas as pd
 
@@ -6,19 +6,23 @@ import pandas as pd
 
 st.title('Projeto Mackenzie')
 
-link_list = scraping.linkList()
+link_list = scraping.linkList(url='https://transparencia.campinas.sp.gov.br/index.php?action=dadosabertos',
+                              tag='a',
+                              classdiv='class',
+                              name='btn btn-default btn-coresAlteradas btn-bordasMaiores btn-metodo')
 
 btn = [] # lista dos botões
 
 # 
 for i in range(len(link_list)):
         btn.append(
-                st.sidebar.button(link_list[i][3:])
+                st.sidebar.button(link_list[i][4:])
                 )
         if btn[i]:
                 st.table(
                         scraping.showData(
-                        link_list[i]
+                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
+                        answer=link_list[i]
                         )
                 )
 
@@ -47,5 +51,3 @@ st.table(
                         )
 )
                 
-
-
