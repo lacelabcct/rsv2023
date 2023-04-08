@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 
 
-
 st.title('Projeto Mackenzie')
 
 link_list = scraping.linkList(url='https://transparencia.campinas.sp.gov.br/index.php?action=dadosabertos',
@@ -11,20 +10,7 @@ link_list = scraping.linkList(url='https://transparencia.campinas.sp.gov.br/inde
                               classdiv='class',
                               name='btn btn-default btn-coresAlteradas btn-bordasMaiores btn-metodo')
 
-btn = [] # lista dos botões
 
-# 
-for i in range(len(link_list)):
-        btn.append(
-                st.sidebar.button(link_list[i][4:])
-                )
-        if btn[i]:
-                st.table(
-                        scraping.showData(
-                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                        answer=link_list[i]
-                        )
-                )
 
 
 amountLink = len(link_list) - 1
@@ -33,7 +19,7 @@ amountLink = len(link_list) - 1
 enumerateList = {}
 for x,y in enumerate(link_list):
         z = []
-        z.append(y)
+        z.append(y[4:])
         enumerateList[x] = z
 
 option = pd.DataFrame(data=enumerateList)
@@ -47,7 +33,24 @@ search = st.number_input(
  
 st.table(
         scraping.showData(
-                        link_list[search]
+                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
+                        answer=link_list[search][1:]
                         )
+                        
 )
-                
+    
+     
+btn = [] # lista dos botões
+
+for i in range(len(link_list)):
+        btn.append(
+                st.sidebar.button(link_list[i][4:])
+                )
+        if btn[i]:
+                st.table(
+                        scraping.showData(
+                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
+                        answer=link_list[i][1:]
+                        )
+                )
+           
