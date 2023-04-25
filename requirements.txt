@@ -1,0 +1,8 @@
+streamlit
+pandas
+time
+urllib.request
+json
+bs4
+requests
+streamlit_chat
