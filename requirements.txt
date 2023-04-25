@@ -1,8 +1,10 @@
-streamlit
 pandas
 time
 urllib.request
 json
 bs4
 requests
+BeautifulSoup
+bs4
+streamlit
 streamlit_chat
