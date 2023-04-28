@@ -4,9 +4,9 @@ import pandas as pd
 from streamlit_chat import message
 from time import *
 from ioBot import io
+from urllib.request import urlopen
 
-
-st.title('Projeto Mackenzie')
+st.title('Mackenzie ChaBot')
 
 link_list = scraping.linkList(url='https://transparencia.campinas.sp.gov.br/index.php?action=dadosabertos',
                               tag='a',
@@ -25,51 +25,60 @@ for x,y in enumerate(link_list):
 option = pd.DataFrame(data=enumerateList)
 
 
-user = st.text_input('Diga um "Oi" para iniciar conversa.')
-user = user.lower().strip()
+def user():
+        user = st.text_input('Diga um "Oi" para iniciar conversa.').lower().strip()
+        user = user.lower().strip()
+        return user
 
-if user  == "":
+user_ = user()
+if user_  == "":
         pass
-elif user in io.bot_answer:
-        message(user, is_user=True)
-        message(io.bot_answer[user])
-        st.table(option)
+elif user_ in io.bot_answer:
+        message(user_, is_user=True)
+        message(io.bot_answer[user_])
+        btn = [] # lista dos botões
 
-elif user in io.bot_function:
-        message(user, is_user=True)
-        message(f'Tabela de {user}:')
+        for i in range(len(link_list)):
+                btn.append(
+                        st.button(link_list[i][4:],use_container_width=True)
+                        )
+                if btn[i]:
+                        st.table(
+                                scraping.showData(
+                                link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
+                                answer=link_list[i][1:]
+                                )
+                        )
+
+elif user_ in io.bot_function:
+        message(user_, is_user=True)
+        message(f'Tabela de {user_}:')
         st.table(
                 scraping.showData(
                         link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                        answer=io.bot_function[user]
+                        answer=io.bot_function[user_]
                         )
                         )
         
-elif user in io.bot_function2:
-        message(user, is_user=True)
-        message(f'Tabela {user}:')
+elif user_ in io.bot_function2:
+        message(user_, is_user=True)
+        message(f'Tabela {user_}:')
         st.table(
                 scraping.showData(
                         link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                        answer=io.bot_function2[user]
+                        answer=io.bot_function2[user_]
                         )
                         )
         
 else:
         message('Desculpa, ainda não fui programado pra compreender o que você escreveu')
 
-     
-btn = [] # lista dos botões
+if user_ == "":
+        pass
+else:
+        response = urlopen(
+        f'https://docs.google.com/forms/d/e/1FAIpQLScRqU6yRw2Ykln-42Dj2_NfORcwbsUc_pfadE7p3KPMZtY5AQ/formResponse?&submit=Submit?usp=pp_url&entry.2034641448=x&entry.2146359889={user_}'
+                )
+        html = response.read()
 
-for i in range(len(link_list)):
-        btn.append(
-                st.sidebar.button(link_list[i][4:])
-                )
-        if btn[i]:
-                st.table(
-                        scraping.showData(
-                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                        answer=link_list[i][1:]
-                        )
-                )
            
