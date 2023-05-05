@@ -1,11 +1,6 @@
 import requests
 import pandas as pd
-import unicodedata
 from bs4 import BeautifulSoup 
-
-def remove_normalized(string: str) -> str:
-        normalized = unicodedata.normalize('NFC', string)
-        return normalized.enconde('ascii', 'ignore').decode('utf8').casefold()
 
 class dataScraped:
 
