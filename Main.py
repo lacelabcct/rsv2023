@@ -23,7 +23,7 @@ elif user_ in io.bot_answer:
 elif user_ == 'sim':
         try:
                 select_city = dataScraped.selectCity()
-                message('Selecione até duas cidades para análisar:')
+                message('Selecione as cidades que você deseja analisar:')
                 search_city = st.multiselect(
                 '', select_city)
                 frames= []
