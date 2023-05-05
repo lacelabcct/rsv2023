@@ -27,9 +27,9 @@ elif user_ == 'sim':
                 search_city = st.multiselect(
                 '', select_city)
                 frames= []
-                for i in range(len(search_city)):
-                       data_show = dataScraped.getAPI(search_city[i], '2022')
-                       frames.append(data_show)
+                a = [
+                        frames.append(dataScraped.getAPI(
+                        search_city[i], '2022')) for i in range(len(search_city))]
 
                 result = pd.concat(frames)
                 st.table(result)
