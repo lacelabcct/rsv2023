@@ -6,7 +6,8 @@ from time import *
 from ioBot import io
 from urllib.request import urlopen
 
-st.title('Mackenzie ChaBot')
+st.title('Mackenzie & URBE9 (ChatBot)')
+st.subheader('Protótipo experimental de Auto-Relatório de sinais Vitais')
 
 link_list = scraping.linkList(url='https://transparencia.campinas.sp.gov.br/index.php?action=dadosabertos',
                               tag='a',
