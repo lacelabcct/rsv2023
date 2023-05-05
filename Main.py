@@ -1,4 +1,4 @@
-from laceRSV23 import scraping
+from lacerRSV23 import dataScraped
 import streamlit as st
 import pandas as pd
 from streamlit_chat import message
@@ -6,24 +6,7 @@ from time import *
 from ioBot import io
 from urllib.request import urlopen
 
-st.title('Mackenzie & URBE9 (ChatBot)')
-st.subheader('Protótipo experimental de Auto-Relatório de sinais Vitais')
-
-link_list = scraping.linkList(url='https://transparencia.campinas.sp.gov.br/index.php?action=dadosabertos',
-                              tag='a',
-                              classdiv='class',
-                              name='btn btn-default btn-coresAlteradas btn-bordasMaiores btn-metodo')
-
-
-
-# enumerando os links
-enumerateList = {}
-for x,y in enumerate(link_list):
-        z = []
-        z.append(y[4:])
-        enumerateList[x] = z
-
-option = pd.DataFrame(data=enumerateList)
+st.title('Mackenzie ChatBot')
 
 
 def user():
@@ -37,49 +20,49 @@ if user_  == "":
 elif user_ in io.bot_answer:
         message(user_, is_user=True)
         message(io.bot_answer[user_])
-        btn = [] # lista dos botões
+elif user_ == 'sim':
+        try:
+                select_city = dataScraped.selectCity()
+                message('Selecione até duas cidades para análisar:')
+                search_city = st.multiselect(
+                '', select_city)
+                frames= []
+                for i in range(len(search_city)):
+                       data_show = dataScraped.getAPI(search_city[i], '2022')
+                       frames.append(data_show)
 
-        for i in range(len(link_list)):
-                btn.append(
-                        st.button(link_list[i][4:],use_container_width=True)
-                        )
-                if btn[i]:
-                        st.table(
-                                scraping.showData(
-                                link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                                answer=link_list[i][1:]
-                                )
-                        )
-
-elif user_ in io.bot_function:
-        message(user_, is_user=True)
-        message(f'Tabela de {user_}:')
-        st.table(
-                scraping.showData(
-                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                        answer=io.bot_function[user_]
-                        )
-                        )
-        
-elif user_ in io.bot_function2:
-        message(user_, is_user=True)
-        message(f'Tabela {user_}:')
-        st.table(
-                scraping.showData(
-                        link='https://transparencia.campinas.sp.gov.br/index.php?action=ws&mode=',
-                        answer=io.bot_function2[user_]
-                        )
-                        )
+                result = pd.concat(frames)
+                st.table(result)
+        except:
+                pass
         
 else:
         message('Desculpa, ainda não fui programado pra compreender o que você escreveu')
 
-if user_ == "":
-        pass
-else:
-        response = urlopen(
-        f'https://docs.google.com/forms/d/e/1FAIpQLScRqU6yRw2Ykln-42Dj2_NfORcwbsUc_pfadE7p3KPMZtY5AQ/formResponse?&submit=Submit?usp=pp_url&entry.2034641448=x&entry.2146359889={user_}'
-                )
-        html = response.read()
+try:
+        if user_ == "":
+                pass
+        else:
+                response = urlopen(
+                f'https://docs.google.com/forms/d/e/1FAIpQLScRqU6yRw2Ykln-42Dj2_NfORcwbsUc_pfadE7p3KPMZtY5AQ/formResponse?&submit=Submit?usp=pp_url&entry.2034641448=x&entry.2146359889={user_}'
+                        )
+                html = response.read()
 
-           
+        if search_city[0] == '':
+                pass
+        else:
+                response = urlopen(
+                f'https://docs.google.com/forms/d/e/1FAIpQLScRqU6yRw2Ykln-42Dj2_NfORcwbsUc_pfadE7p3KPMZtY5AQ/formResponse?&submit=Submit?usp=pp_url&entry.2034641448=x&entry.2146359889={search_city[0]}'
+                        )
+                html = response.read()
+
+        if search_city[1] == '':
+                pass
+        else:
+                response = urlopen(
+                f'https://docs.google.com/forms/d/e/1FAIpQLScRqU6yRw2Ykln-42Dj2_NfORcwbsUc_pfadE7p3KPMZtY5AQ/formResponse?&submit=Submit?usp=pp_url&entry.2034641448=x&entry.2146359889={search_city[1]}'
+                        )
+                html = response.read()
+
+except:
+        pass
