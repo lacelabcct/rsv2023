@@ -1,4 +1,4 @@
-from lacerRSV23 import dataScraped
+from laceRSV23 import dataScraped
 import streamlit as st
 import pandas as pd
 from streamlit_chat import message
