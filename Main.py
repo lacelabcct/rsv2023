@@ -7,8 +7,10 @@ from ioBot import io
 from urllib.request import urlopen
 import matplotlib.pyplot as plt
 
+# Abre o arquivo css para que posso modificar as estrura visual do site
 with open('style.css') as s:
         st.markdown(f'<style>{s.read()}</style>', unsafe_allow_html=True)
+
 
 st.title('Mackenzie ChatBot')
 
