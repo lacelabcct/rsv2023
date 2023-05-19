@@ -88,8 +88,13 @@ class dataScraped:
             value = '.'.join(value)
             value = value[3:]
             return value
-
+        
+        #PARA FORMATAR COMO NOTAÇÃO CIENTÍFICA:
+        # x = 3.45e-4
+        # print(f"{x:.2e}")
+                
         html1 = convertValue(html1)
+        html1 = f"{html1:.2e}"
         html2 = convertValue(html2)
         html3 = convertValue(html3)
         html4 = convertValue(html4)
