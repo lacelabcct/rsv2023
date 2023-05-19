@@ -101,7 +101,7 @@ class dataScraped:
         # Gera o DataFrame
         df_value = pd.DataFrame(
             {
-                link1.get('id'):[ "{:,}".format(html1)],
+                link1.get('id'):[html1],
                 link2.get('id'):[html2],
                 link3.get('id'):[html3],
                 link4.get('id'):[html4]
