@@ -65,10 +65,10 @@ elif user_ == 'sim':
                 plt1.show()
                 st.pyplot(plt1)
                 
-                plt2.title('Recursos Transferidos Ao Municipio')
-                plt2.bar(x,y2)
-                plt2.show()
-                st.pyplot(plt2)
+                #plt2.title('Recursos Transferidos Ao Municipio')
+                #plt2.bar(x,y2)
+                #plt2.show()
+                #st.pyplot(plt2)
 
         except:
                 pass
