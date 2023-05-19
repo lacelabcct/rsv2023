@@ -93,7 +93,6 @@ class dataScraped:
         # "{:,}".format(resp)
                 
         html1 = convertValue(html1)
-        html1 = "{:,}".format(html1)
         html2 = convertValue(html2)
         html3 = convertValue(html3)
         html4 = convertValue(html4)
@@ -102,7 +101,7 @@ class dataScraped:
         # Gera o DataFrame
         df_value = pd.DataFrame(
             {
-                link1.get('id'):[html1],
+                link1.get('id'):[ "{:,}".format(html1)],
                 link2.get('id'):[html2],
                 link3.get('id'):[html3],
                 link4.get('id'):[html4]
