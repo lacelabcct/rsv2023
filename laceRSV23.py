@@ -90,10 +90,10 @@ class dataScraped:
             return value
         
         #PARA FORMATAR COMO NOTAÇÃO CIENTÍFICA:
-        # f"{a_float:.1f}"
+        # "{:,}".format(resp)
                 
         html1 = convertValue(html1)
-        html1 = f"{html1:.2f}"
+        html1 = "{:,}".format(html1)
         html2 = convertValue(html2)
         html3 = convertValue(html3)
         html4 = convertValue(html4)
