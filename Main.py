@@ -60,10 +60,10 @@ elif user_ == 'sim':
                 y3 = result['gastosDiretosGovernoFederalNaLocalidade']
                 y4 = result['beneficiosNaLocalidade']
                                  
-                plt2.title('Recursos Transferidos Ao Municipio')
-                plt2.bar(x,y2)
-                plt2.show()
-                st.pyplot(plt2)
+                plt.title('recursosTransferidosAoMunicipio')
+                plt.bar(x,y2)
+                plt.show()
+                st.pyplot(plt)
 
         except:
                 pass
