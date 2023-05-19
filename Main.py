@@ -48,7 +48,9 @@ elif user_ == 'sim':
 
                 x = result['Cidade']
                 # Modificando o tipo de valor das colunas
-                result['recursosTransferidosAoGovernoEstadual'] = pd.to_numeric(result['recursosTransferidosAoGovernoEstadual'])
+                #PARA FORMATAR COMO NOTAÇÃO CIENTÍFICA:
+                # "{:e}".format(512349000.000000) 
+                result['recursosTransferidosAoGovernoEstadual'] = pd.to_numeric("{:e}".format(result['recursosTransferidosAoGovernoEstadual']))
                 result['recursosTransferidosAoMunicipio'] = pd.to_numeric(result['recursosTransferidosAoMunicipio'])
                 result['gastosDiretosGovernoFederalNaLocalidade'] = pd.to_numeric(result['gastosDiretosGovernoFederalNaLocalidade'])
                 result['beneficiosNaLocalidade'] = pd.to_numeric(result['beneficiosNaLocalidade'])
