@@ -61,7 +61,7 @@ elif user_ == 'sim':
                 y4 = result['beneficiosNaLocalidade']
                                  
                 plt.title('recursosTransferidosAoMunicipio')
-                plt.bar(x,y2, str(y2))
+                plt.bar(x,y2)
                 plt.show()
                 st.pyplot(plt)
 
