@@ -35,7 +35,7 @@ elif user_ == 'sim':
                 message('Selecione algumas cidades para análisar:')
                 search_city = st.multiselect(
                 '', select_city) # Lista de multipla escolha que usúario escolher 
-                yearCity = st.selectbox('',('2022','2021','2020','2019'))  # Lista de escolha única
+                yearCity = st.selectbox('',('2023','2022','2021','2020','2019'))  # Lista de escolha única
                 frames= []
                 a = [
                         frames.append(
