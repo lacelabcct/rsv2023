@@ -50,7 +50,7 @@ elif user_ == 'sim':
                 # Modificando o tipo de valor das colunas
                 #PARA FORMATAR COMO NOTAÇÃO CIENTÍFICA:
                 # "{:e}".format(512349000.000000) 
-                result['recursosTransferidosAoGovernoEstadual'] = pd.to_numeric("{:e}".format(result['recursosTransferidosAoGovernoEstadual']))
+                result['recursosTransferidosAoGovernoEstadual'] = "{:e}".format(pd.to_numeric(result['recursosTransferidosAoGovernoEstadual']))
                 result['recursosTransferidosAoMunicipio'] = pd.to_numeric(result['recursosTransferidosAoMunicipio'])
                 result['gastosDiretosGovernoFederalNaLocalidade'] = pd.to_numeric(result['gastosDiretosGovernoFederalNaLocalidade'])
                 result['beneficiosNaLocalidade'] = pd.to_numeric(result['beneficiosNaLocalidade'])
