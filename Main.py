@@ -30,9 +30,9 @@ def SendMAIL(conteudo, mail):
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
     msg['From'] = "prof.massaki@gmail.com"
-    mail = str(mail.encode('utf-8'))
-    mail =  mail.replace('b', '')
-    msg['To'] =   mail
+    mail = mail.encode('utf-8')
+    mail =  mail.replace('b', '')    
+    msg['To'] =   mail.strip()
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
     # attach image to message body 
