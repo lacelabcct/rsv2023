@@ -52,8 +52,6 @@ def user():
         user = st.text_input('Diga um "Oi" para iniciar conversa.').lower().strip()
         return user
 
-
-
 user_ = user()
 
 if user_  == "":
