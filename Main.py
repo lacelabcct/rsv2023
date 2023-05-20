@@ -7,6 +7,38 @@ from ioBot import io
 from urllib.request import urlopen
 import matplotlib.pyplot as plt
 
+import streamlit as st
+import webbrowser
+from io import BytesIO
+import requests
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
+from email.mime.text import MIMEText
+
+from urllib.request import urlopen
+
+def SendMAIL(assunto):
+    # create message object instance 
+    msg = MIMEMultipart()     
+    # setup the parameters of the message 
+    password = "efoqfcwiorncteas"
+    msg['From'] = "prof.massaki@gmail.com"
+    msg['To'] =   "prof.massaki@gmail.com"
+    msg['Subject'] = assunto
+    #file = "Python.pdf"
+    # attach image to message body 
+    #msg.attach(MIMEText(open(file).read()))     
+    # create server 
+    server = smtplib.SMTP('smtp.gmail.com: 587')     
+    server.starttls()     
+    # Login Credentials for sending the mail 
+    server.login(msg['From'], password)      
+    # send the message via the server. 
+    server.sendmail(msg['From'], msg['To'], msg.as_string("MENSAGEM TESTE"))     
+    server.quit()
+
 # Abre o arquivo css para que posso modificar as estrura visual do site
 with open('style.css') as s:
         st.markdown(f'<style>{s.read()}</style>', unsafe_allow_html=True)
@@ -65,10 +97,10 @@ elif user_ == 'sim':
                 plt.show()
                 st.pyplot(plt)
                 
-                if st.button('SALVAR'):
-                    f = open("\myfile.txt", "w")
-                    f.write("Dados Salvos!")
-                    f.close()
+                if st.button('Confirmar 👇'):    
+                    response = urlopen(f'{y2}')
+                    html = response.read()
+                    SendMAIL(y2)
 
         except:
                 pass
