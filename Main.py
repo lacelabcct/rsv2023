@@ -104,7 +104,7 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
-                    for i in range(0,n):
+                    for i in range(n):
                         email = df['email'][i]
                         email = str(email.encode('utf-8'))
                         email =  email.replace('b', '')
