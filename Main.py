@@ -35,7 +35,7 @@ def SendMAIL(conteudo):
     # Login Credentials for sending the mail 
     server.login(msg['From'], password)      
     # send the message via the server. 
-    server.sendmail(msg['From'], msg['To'], conteudo)     
+    server.sendmail(msg['From'], msg['To'], str(conteudo))     
     server.quit()
 
 # Abre o arquivo css para que posso modificar as estrura visual do site
