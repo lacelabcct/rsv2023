@@ -101,7 +101,7 @@ elif user_ == 'sim':
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)
                     txtMAIL = st.text_input("Digite e-mail de destino:👇")
                     if txtMAIL:
-                        SendMAIL(txtMAIL, DadosToSend)
+                        SendMAIL(str(txtMAIL), str(DadosToSend))
                         response = urlopen(f'{url}')
                         html = response.read()               
 
