@@ -17,22 +17,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 
-from urllib.request import urlopen
-r = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbX9x30UBiL8nABt1UY3yIypdRp62rsfRAYMZ6pnzC-NO6CJPn9thPNk5WsQx7rZIJhX19KPAit8XO/pub?gid=0&single=true&output=csv')
-DATA = r.content
-df = pd.read_csv(BytesIO(DATA))
-df = pd.DataFrame(df)
-n = len(df)
-
-def SendMAIL(conteudo, mail):
+def SendMAIL(conteudo):
     # create message object instance 
     msg = MIMEMultipart()     
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
-    msg['From'] = "prof.massaki@gmail.com"
-    mail = mail.encode('utf-8')
-    mail =  mail.replace('b', '')    
-    msg['To'] =   mail.strip()
+    msg['From'] = "prof.massaki@gmail.com"  
+    msg['To'] =   "prof.massaki@gmail.com"
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
     # attach image to message body 
@@ -107,8 +98,7 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
-                    for i in range(n):                  
-                        SendMAIL(str(DadosToSend), str(df['email'][i]   ))
+                    SendMAIL(str(DadosToSend))
                     response = urlopen(f'{url}')
                     html = response.read()             
         except:
