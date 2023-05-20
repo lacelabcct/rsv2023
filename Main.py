@@ -95,10 +95,11 @@ elif user_ == 'sim':
                 plt.show()
                 st.pyplot(plt)                
                 
-                url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
+                DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)
+                url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + DadosToSend
 
-                if st.button('Confirmar 👇'):
-                    SendMAIL(str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4))
+                if st.button('Enviar Dados para e-mail 👇'):
+                    SendMAIL(DadosToSend)
                     response = urlopen(f'{url}')
                     html = response.read()               
 
