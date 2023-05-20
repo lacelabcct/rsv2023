@@ -30,6 +30,8 @@ def SendMAIL(conteudo, mail):
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
     msg['From'] = "prof.massaki@gmail.com"
+    mail = str(mail.encode('utf-8'))
+    mail =  mail.replace('b', '')
     msg['To'] =   mail
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
@@ -105,9 +107,7 @@ elif user_ == 'sim':
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
                     for i in range(n):
-                        email = df['email'][i]
-                        email = str(email.encode('utf-8'))
-                        email =  email.replace('b', '')
+                        email = df['email'][i]                       
                         SendMAIL(str(DadosToSend), str(email))
                 response = urlopen(f'{url}')
                 html = response.read()             
