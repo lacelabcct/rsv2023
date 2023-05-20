@@ -66,7 +66,6 @@ elif user_ in io.bot_answer:
         message(io.bot_answer[user_])
 elif user_ == 'sim':
         try:
-                txtMAIL = st.text_input("Digite seu e-mail:👇")
                 select_city = dataScraped.selectCity()
                 message('Selecione algumas cidades para análisar:')
                 search_city = st.multiselect(
