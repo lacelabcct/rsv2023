@@ -66,7 +66,7 @@ elif user_ == 'sim':
                 st.pyplot(plt)
                 
                 if st.button('SALVAR'):
-                    f = open("C:/Users/massa/OneDrive/Documentos/recursosTransferidosAoMunicipio.txt", "w")
+                    f = open("https://raw.githubusercontent.com/lacelabcct/rsv2023/main/relatorio.txt", "w")
                     f.write("DADOS SALVOS!")
                     f.close()
 
