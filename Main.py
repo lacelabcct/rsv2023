@@ -72,8 +72,7 @@ elif user_ == 'sim':
                         dataScraped.getAPI(
                         search_city[i], yearCity)) for i in range(len(search_city))]
 
-                result = pd.concat(frames) # Juntando os dados selecionados em uma tabela
-                DadosToSend = result
+                result = pd.concat(frames) # Juntando os dados selecionados em uma tabela                
                 result['Cidade'] = search_city # Adicionando uma coluna das cidades para ser o index
                 st.table(result)
 
@@ -96,7 +95,7 @@ elif user_ == 'sim':
                 plt.show()
                 st.pyplot(plt)                
                 
-                url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + DadosToSend
+                url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)
