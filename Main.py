@@ -95,11 +95,12 @@ elif user_ == 'sim':
                 plt.show()
                 st.pyplot(plt)                
                 
-                DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + str(DadosToSend)
 
                 if st.button('Enviar Dados para e-mail 👇'):
+                    DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)
                     SendMAIL(DadosToSend)
+                    url = url + DadosToSend
                     response = urlopen(f'{url}')
                     html = response.read()               
 
