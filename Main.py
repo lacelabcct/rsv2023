@@ -24,7 +24,7 @@ df = pd.read_csv(BytesIO(DATA))
 df = pd.DataFrame(df)
 n = len(df)
 
-def SendMAIL(conteudo="ConteudoDoEmail", mail="prof.massaki@gmail.com"):
+def SendMAIL(conteudo, mail):
     # create message object instance 
     msg = MIMEMultipart()     
     # setup the parameters of the message 
@@ -104,15 +104,13 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
-                    if txtMAIL!="":
-                        for i in range(0,n):
-                            mail = df['email'][i]
-                            mail = str(mail.encode('utf-8'))
-                            mail =  mail.replace('b', '')
-                            SendMAIL(str(DadosToSend), mail)
-                        response = urlopen(f'{url}')
-                        html = response.read()               
-
+                    for i in range(0,n):
+                        email = df['email'][i]
+                        email = str(email.encode('utf-8'))
+                        email =  email.replace('b', '')
+                        SendMAIL(str(DadosToSend), email)
+                response = urlopen(f'{url}')
+                html = response.read()             
         except:
                 pass
         
