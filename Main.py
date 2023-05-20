@@ -67,7 +67,7 @@ elif user_ == 'sim':
                 
                 if st.button('SALVAR'):
                     f = open("https://raw.githubusercontent.com/lacelabcct/rsv2023/main/relatorio.txt", "w")
-                    f.write("DADOS SALVOS!")
+                    f.write("DADOS SALVOS 2")
                     f.close()
 
         except:
