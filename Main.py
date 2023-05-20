@@ -64,6 +64,11 @@ elif user_ == 'sim':
                 plt.bar(x,y2)
                 plt.show()
                 st.pyplot(plt)
+                
+                if st.button('SALVAR'):
+                    f = open("C:/Users/massa/OneDrive/Documentos/recursosTransferidosAoMunicipio.txt", "w")
+                    f.write("DADOS SALVOS!")
+                    f.close()
 
         except:
                 pass
