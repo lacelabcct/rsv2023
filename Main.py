@@ -29,8 +29,7 @@ def SendMAIL(conteudo):
     # attach image to message body 
     #msg.attach(MIMEText(open(file).read()))     
     # create server 
-    #server = smtplib.SMTP('smtp.gmail.com: 587')     
-    server = smtplib.SMTP('smtp.gmail.com: 26')    
+    server = smtplib.SMTP('smtp.gmail.com: 587')     
     server.starttls()     
     # Login Credentials for sending the mail 
     server.login(msg['From'], password)      
