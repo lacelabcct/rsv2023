@@ -19,7 +19,7 @@ from email.mime.text import MIMEText
 
 from urllib.request import urlopen
 
-def SendMAIL(mail="prof.massaki@gmail.com", conteudo):
+def SendMAIL(mail="prof.massaki@gmail.com", conteudo="ConteudoDoEmail"):
     # create message object instance 
     msg = MIMEMultipart()     
     # setup the parameters of the message 
