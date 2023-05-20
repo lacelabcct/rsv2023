@@ -66,8 +66,9 @@ elif user_ == 'sim':
                 st.pyplot(plt)
                 
                 if st.button('SALVAR'):
-                    f = open("https://raw.githubusercontent.com/lacelabcct/rsv2023/main/relatorio.txt", "w")
-                    f.write("DADOS SALVOS 2")
+                if st.button('SALVAR'):
+                    f = open("\myfile.txt", "w")
+                    f.write("Dados Salvos!")
                     f.close()
 
         except:
