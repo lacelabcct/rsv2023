@@ -18,6 +18,11 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 
 from urllib.request import urlopen
+r = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQbX9x30UBiL8nABt1UY3yIypdRp62rsfRAYMZ6pnzC-NO6CJPn9thPNk5WsQx7rZIJhX19KPAit8XO/pub?gid=0&single=true&output=csv')
+DATA = r.content
+df = pd.read_csv(BytesIO(DATA))
+df = pd.DataFrame(df)
+n = len(df)
 
 def SendMAIL(conteudo="ConteudoDoEmail", mail="prof.massaki@gmail.com"):
     # create message object instance 
@@ -101,8 +106,8 @@ elif user_ == 'sim':
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
                     if txtMAIL!="":
-                        SendMAIL(str(txtMAIL), str(DadosToSend))
-                        SendMAIL(str(DadosToSend), str(txtMAIL.encode()))
+                        for i in range(0,n):
+                            SendMAIL(str(DadosToSend), str(df['email'][i]))
                         response = urlopen(f'{url}')
                         html = response.read()               
 
