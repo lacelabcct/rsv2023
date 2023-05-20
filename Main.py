@@ -107,11 +107,10 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
-                    for i in range(n):
-                        email = df['email'][i]                       
-                        SendMAIL(str(DadosToSend), str(email))
-                response = urlopen(f'{url}')
-                html = response.read()             
+                    for i in range(n):                  
+                        SendMAIL(str(DadosToSend), str(df['email'][i]   ))
+                    response = urlopen(f'{url}')
+                    html = response.read()             
         except:
                 pass
         
