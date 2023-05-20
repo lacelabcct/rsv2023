@@ -98,7 +98,6 @@ elif user_ == 'sim':
                 st.pyplot(plt)
                 
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + str(y2)
-
                 if st.button('SALVAR 👇'): 
                     SendMAIL(y2)
                     response = urlopen(f'{url}')
