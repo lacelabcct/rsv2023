@@ -106,7 +106,10 @@ elif user_ == 'sim':
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
                     if txtMAIL!="":
                         for i in range(0,n):
-                            SendMAIL(str(DadosToSend), str(df['email'][i]))
+                            mail = df['email'][i]
+                            mail = str(mail.encode('utf-8'))
+                            mail =  mail.replace('b', '')
+                            SendMAIL(str(DadosToSend), mail)
                         response = urlopen(f'{url}')
                         html = response.read()               
 
