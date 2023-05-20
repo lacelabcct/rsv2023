@@ -66,7 +66,6 @@ elif user_ == 'sim':
                 st.pyplot(plt)
                 
                 if st.button('SALVAR'):
-                if st.button('SALVAR'):
                     f = open("\myfile.txt", "w")
                     f.write("Dados Salvos!")
                     f.close()
