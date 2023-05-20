@@ -19,14 +19,14 @@ from email.mime.text import MIMEText
 
 from urllib.request import urlopen
 
-def SendMAIL(assunto):
+def SendMAIL(mail="prof.massaki@gmail.com", conteudo):
     # create message object instance 
     msg = MIMEMultipart()     
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
     msg['From'] = "prof.massaki@gmail.com"
     msg['To'] =   "prof.massaki@gmail.com"
-    msg['Subject'] = assunto
+    msg['Subject'] = "Assunto"
     #file = "Python.pdf"
     # attach image to message body 
     #msg.attach(MIMEText(open(file).read()))     
@@ -36,7 +36,7 @@ def SendMAIL(assunto):
     # Login Credentials for sending the mail 
     server.login(msg['From'], password)      
     # send the message via the server. 
-    server.sendmail(msg['From'], msg['To'], assunto)     
+    server.sendmail(msg['From'], msg['To'], conteudo)     
     server.quit()
 
 # Abre o arquivo css para que posso modificar as estrura visual do site
@@ -99,9 +99,11 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)
-                    SendMAIL(DadosToSend)
-                    response = urlopen(f'{url}')
-                    html = response.read()               
+                    txtMAIL = st.text_input("Digite e-mail de destino:👇")
+                    if txtMAIL:
+                        SendMAIL(txtMAIL, DadosToSend)
+                        response = urlopen(f'{url}')
+                        html = response.read()               
 
         except:
                 pass
