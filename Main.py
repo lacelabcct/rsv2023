@@ -30,7 +30,7 @@ def SendMAIL(conteudo, mail):
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
     msg['From'] = "prof.massaki@gmail.com"
-    msg['To'] =   "prof.massaki@gmail.com"
+    msg['To'] =   mail
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
     # attach image to message body 
@@ -108,7 +108,7 @@ elif user_ == 'sim':
                         email = df['email'][i]
                         email = str(email.encode('utf-8'))
                         email =  email.replace('b', '')
-                        SendMAIL(str(DadosToSend), email)
+                        SendMAIL(str(DadosToSend), str(email))
                 response = urlopen(f'{url}')
                 html = response.read()             
         except:
