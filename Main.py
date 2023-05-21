@@ -74,6 +74,7 @@ elif user_ == 'sim':
                 result = pd.concat(frames) # Juntando os dados selecionados em uma tabela                
                 result['Cidade'] = search_city # Adicionando uma coluna das cidades para ser o index
                 st.table(result)
+                resultDF = pd.DataFrame(result)
 
                 x = result['Cidade']
                 # Modificando o tipo de valor das colunas
@@ -98,7 +99,8 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
-                    SendMAIL(str(DadosToSend))
+                    #SendMAIL(str(DadosToSend))
+                    SendMAIL(resultDF)
                     response = urlopen(f'{url}')
                     html = response.read()             
         except:
