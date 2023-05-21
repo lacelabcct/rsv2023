@@ -18,7 +18,7 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 
 from PIL import Image
-image01 = Image.open('background.JPG')
+#image01 = Image.open('background.JPG')
 
 def SendMAIL(conteudo):
     # create message object instance 
@@ -47,7 +47,7 @@ with open('style.css') as s:
 
 
 st.title('Mackenzie ChatBot')
-st.image(image01, width=800, caption='RSV2023') 
+#st.image(image01, width=800, caption='RSV2023') 
 
 def user():
         # Transforma as letras em minúscalas e retira o espaço sobrando
