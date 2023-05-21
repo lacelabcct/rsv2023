@@ -103,7 +103,7 @@ elif user_ == 'sim':
                 plt.show()
                 st.pyplot(plt) 
                 
-                fig, bx = plt.subplots()
+                fig2, bx = plt.subplots()
                 bx.pie(y2, label=x)
                 bx.set_ylabel('Valor (R$)')
                 bx.set_title('Recursos Transferidos ao Municipio')
