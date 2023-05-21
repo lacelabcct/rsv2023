@@ -4,8 +4,9 @@
 
 
 
-#Para instalar a biblioteca faça: 
+# Para instalar a biblioteca faça: 
 pip install laceRSV23_v1  ou 
 pip install -i https://test.pypi.org/simple/ laceRSV23-v1
 
-Em seguida digite no seu terminal: from laceRSV23_v1 import bibli_laceRSV23
+# Em seguida digite no seu terminal: 
+from laceRSV23_v1 import bibli_laceRSV23
