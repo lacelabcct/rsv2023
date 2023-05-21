@@ -101,7 +101,8 @@ elif user_ == 'sim':
                 ax.set_title('recursosTransferidosAoMunicipio')
                 ax.legend(title='Municipios')
                 plt.show()
-                           
+                st.pyplot(plt) 
+                
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
 
                 if st.button('Enviar Dados para e-mail 👇'):
