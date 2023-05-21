@@ -34,7 +34,7 @@ def SendMAIL(conteudo, cidades):
     # Login Credentials for sending the mail 
     server.login(msg['From'], password)      
     # send the message via the server. 
-    conteudo = "Subject: RSV2023(Mackenzie&Urbe9) \r\n" + conteudo + "\r\n" + cidades
+    conteudo = "Subject: RSV2023(Mackenzie&Urbe9) \r\n" + conteudo + cidades
     server.sendmail(msg['From'], msg['To'], str(conteudo))     
     server.quit()
 
