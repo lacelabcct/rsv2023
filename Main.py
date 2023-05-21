@@ -17,7 +17,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 
-def SendMAIL(conteudo, cidades):
+def SendMAIL(conteudo):
     # create message object instance 
     msg = MIMEMultipart()     
     # setup the parameters of the message 
@@ -34,7 +34,7 @@ def SendMAIL(conteudo, cidades):
     # Login Credentials for sending the mail 
     server.login(msg['From'], password)      
     # send the message via the server. 
-    conteudo = "Subject: RSV2023(Mackenzie&Urbe9) \r\n" + conteudo + cidades
+    conteudo = "Subject: RSV2023(Mackenzie&Urbe9) \r\n" + conteudo
     server.sendmail(msg['From'], msg['To'], str(conteudo))     
     server.quit()
 
@@ -98,7 +98,7 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
-                    SendMAIL(str(DadosToSend), search_city)
+                    SendMAIL(str(DadosToSend))
                     response = urlopen(f'{url}')
                     html = response.read()             
         except:
