@@ -98,8 +98,16 @@ elif user_ == 'sim':
                 fig, ax = plt.subplots()
                 ax.bar(x, y2, label=x)
                 ax.set_ylabel('Valor (R$)')
-                ax.set_title('recursosTransferidosAoMunicipio')
+                ax.set_title('Recursos Transferidos ao Municipio')
                 ax.legend(title='Municipios')
+                plt.show()
+                st.pyplot(plt) 
+                
+                fig, bx = plt.subplots()
+                bx.pie(y2, label=x)
+                bx.set_ylabel('Valor (R$)')
+                bx.set_title('Recursos Transferidos ao Municipio')
+                bx.legend(title='Municipios')
                 plt.show()
                 st.pyplot(plt) 
                 
