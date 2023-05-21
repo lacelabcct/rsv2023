@@ -91,16 +91,16 @@ elif user_ == 'sim':
                 y3 = result['gastosDiretosGovernoFederalNaLocalidade']
                 y4 = result['beneficiosNaLocalidade']
                 
-                coluna1, coluna2 = st.columns((1,1))
-                with coluna1:
-                    plt.title('recursosTransferidosAoMunicipio')
-                    plt.bar(x,y2)
-                    plt.show()
-                    st.pyplot(plt) 
-                with coluna2:                    
-                    plt.pie(y2, labels = x)
-                    plt.show()
-                    st.pyplot(plt)  
+                #plt.title('recursosTransferidosAoMunicipio')
+                #plt.bar(x,y2)
+                #plt.show()
+                #st.pyplot(plt) 
+                fig, ax = plt.subplots()
+                ax.bar(x, y2, label=x)
+                ax.set_ylabel('Valor (R$)')
+                ax.set_title('recursosTransferidosAoMunicipio')
+                ax.legend(title='Municipios')
+
                            
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
 
