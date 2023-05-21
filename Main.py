@@ -96,22 +96,14 @@ elif user_ == 'sim':
                 #plt.show()
                 #st.pyplot(plt) 
                 
-                #fig, ax = plt.subplots()
-                #ax.bar(x, y2, label=x)
-                #ax.set_ylabel('Valor (R$)')
-                #ax.set_title('Recursos Transferidos ao Municipio')
-                #ax.legend(title='Municipios')
-                #plt.show()
-                #st.pyplot(plt) 
-                
-                fig, bx = plt.subplots()
-                bx.pie(y2, label=x)
-                bx.set_ylabel('Valor (R$)')
-                bx.set_title('Recursos Transferidos ao Municipio')
-                bx.legend(title='Municipios')
+                fig, ax = plt.subplots()
+                ax.bar(x, y2, label=x)
+                ax.set_ylabel('Valor (R$)')
+                ax.set_title('Recursos Transferidos ao Municipio')
+                ax.legend(title='Municipios')
                 plt.show()
                 st.pyplot(plt) 
-                
+                   
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
 
                 if st.button('Enviar Dados para e-mail 👇'):
