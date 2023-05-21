@@ -47,7 +47,7 @@ with open('style.css') as s:
 
 
 st.title('Mackenzie ChatBot')
-
+st.image(image01, width=800, caption='RSV2023') 
 
 def user():
         # Transforma as letras em minúscalas e retira o espaço sobrando
@@ -124,4 +124,4 @@ try:
               add_sheets(user_)
 except:
         pass
- st.image(image01, width=800, caption='RSV2023_LOGO') 
+
