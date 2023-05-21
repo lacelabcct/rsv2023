@@ -18,7 +18,7 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 
 from PIL import Image
-image01 = Image.open('background1.PNG')
+image01 = Image.open('background.JPG')
 
 def SendMAIL(conteudo):
     # create message object instance 
