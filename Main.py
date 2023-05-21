@@ -92,7 +92,7 @@ elif user_ == 'sim':
                 y4 = result['beneficiosNaLocalidade']
                 
                 coluna1, coluna2 = st.columns((1,1))
-                 with coluna1:
+                with coluna1:
                     plt.title('recursosTransferidosAoMunicipio')
                     plt.bar(x,y2)
                     plt.show()
