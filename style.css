@@ -1,14 +1,16 @@
 /* Fundo do site */
 [class="main css-uf99v8 egzxvld5"]{
-    background-color: #D21312;
+    #background-color: #D21312;
+    background-color: rgb(108, 187, 60); 
 }
  
 /* Barra de cima */
 [class="css-1avcm0n e8zbici2"]{
-    background-color: #D21312;
+    #background-color: #D21312;
+    background-color: rgb(108, 187, 60); 
 }
 
 /*Fundo da tabela */
 [class="css-zuelfj edw49t13"]{
-    background-color:  #000000;
+    #background-color:  #000000;
 }
