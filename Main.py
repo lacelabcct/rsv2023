@@ -100,7 +100,7 @@ elif user_ == 'sim':
                 ax.bar(x, y2, label=x)
                 ax.set_ylabel('Valor (R$)')
                 ax.set_title('Recursos Transferidos ao Municipio')
-                ax.legend(title='Municipios')
+                #ax.legend(title='Municipios')
                 plt.show()
                 st.pyplot(plt) 
                    
