@@ -96,10 +96,11 @@ elif user_ == 'sim':
                     plt.title('recursosTransferidosAoMunicipio')
                     plt.bar(x,y2)
                     plt.show()
+                    st.pyplot(plt) 
                 with coluna2:                    
                     plt.pie(y2, labels = x)
                     plt.show()
-                st.pyplot(plt)  
+                    st.pyplot(plt)  
                            
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
 
