@@ -7,7 +7,7 @@ Professor:
 - Massaki de O. Igarashi
 
 ## LINKS PARA ACESSO: 
-- [Protótipo RSV23](https://lacelabcct-rsv2023-main-gfq3kv.streamlit.app)
+- [Protótipo RSV23](https://https://lablace.streamlit.app/)
 - [Portal da Transparência](https://portaldatransparencia.gov.br/localidades)
 
 ### Para instalar a biblioteca faça: 
