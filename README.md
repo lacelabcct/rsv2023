@@ -17,4 +17,4 @@ pip install laceRSV23_v1  ou pip install -i https://test.pypi.org/simple/ laceRS
 from laceRSV23_v1 import bibli_laceRSV23
 
 ## MATERIAL DE APOIO
-![APRESENTAÇÃO L@CE](Apresentacao resultados parciais RSV2023 - versao1.pdf)
+![SLIDES L@CE](https://github.com/lacelabcct/BACKUPs/blob/main/Apresentacao%20resultados%20parciais%20RSV2023%20-%20versao1.pdf)
