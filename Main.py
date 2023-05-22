@@ -44,7 +44,21 @@ def SendMAIL(conteudo):
 # Abre o arquivo css para que posso modificar as estrura visual do site
 with open('style.css') as s:
         st.markdown(f'<style>{s.read()}</style>', unsafe_allow_html=True)
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://cdn.pixabay.com/photo/2019/04/24/11/27/flowers-4151900_960_720.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
+add_bg_from_url() 
 
 st.title('Mackenzie ChatBot')
 #st.image(image01, width=800, caption='RSV2023') 
