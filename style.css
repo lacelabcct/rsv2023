@@ -3,7 +3,11 @@
     background-image: url('https://github.com/lacelabcct/rsv2023/blob/main/background.jpg');
     background-color: rgb(108, 187, 60); 
 }
- 
+.stApp {{
+    background-image: url("https://github.com/lacelabcct/rsv2023/blob/main/background.jpg");
+    background-attachment: fixed;
+    background-size: cover
+    }}
 /* Barra de cima */
 [class="css-1avcm0n e8zbici2"]{
     #background-color: #D21312;
