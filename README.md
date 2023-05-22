@@ -1,7 +1,7 @@
 # EQUIPE L@CE ATUAL:
 Alunos:
 - Elisabete de F. Olimpio
-- Pedro Trindade
+- Pedro H. Trindade
 
 Professor:
 - Massaki de O. Igarashi
