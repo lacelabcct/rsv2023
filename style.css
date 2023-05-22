@@ -1,6 +1,6 @@
 /* Fundo do site */
 [class="main css-uf99v8 egzxvld5"]{
-    background-image: url("background.jpg");
+    background-image: url('background.jpg');
     background-color: #cccccc;
     #background-color: rgb(108, 187, 60); 
 }
