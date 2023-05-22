@@ -2,6 +2,7 @@
 Alunos:
 - Elisabete de F. Olimpio
 - Pedro Trindade
+
 Professor:
 - Massaki de O. Igarashi
 
@@ -16,4 +17,4 @@ pip install laceRSV23_v1  ou pip install -i https://test.pypi.org/simple/ laceRS
 from laceRSV23_v1 import bibli_laceRSV23
 
 ## MATERIAL DE APOIO
-![IMAGEM1](https://github.com/massakiigarashi2/PythonComRPA/blob/main/evento2_12set22.jpg)
+![APRESENTAÇÃO L@CE](Apresentacao resultados parciais RSV2023 - versao1.pdf)
