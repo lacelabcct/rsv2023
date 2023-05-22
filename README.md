@@ -1,4 +1,4 @@
-# EQUIPE L@CE:
+# EQUIPE L@CE ATUAL:
 Alunos:
 - Elisabete de F. Olimpio
 - Pedro Trindade
