@@ -50,7 +50,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("background.jpg");
+             background-image: url("https://github.com/lacelabcct/rsv2023/blob/main/background.jpg");
              background-attachment: fixed;
              background-size: cover
          }}
