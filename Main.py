@@ -23,7 +23,7 @@ def SendMAIL(conteudo):
     password = "efoqfcwiorncteas"
     msg['From'] = "prof.massaki@gmail.com" 
     email = st.text_input('Digite seu E-mail:')
-    msg['To'] = email
+    msg['To'] = str(email)
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
     # attach image to message body 
