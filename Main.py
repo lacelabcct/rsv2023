@@ -6,17 +6,13 @@ from time import *
 from ioBot import io
 from urllib.request import urlopen
 import matplotlib.pyplot as plt
-
-import streamlit as st
 import webbrowser
 from io import BytesIO
 import requests
-
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
-
 from PIL import Image
 #image01 = Image.open('background.JPG')
 
@@ -25,7 +21,8 @@ def SendMAIL(conteudo):
     msg = MIMEMultipart()     
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
-    msg['From'] = "prof.massaki@gmail.com"  
+    msg['From'] = "prof.massaki@gmail.com" 
+    email = st.text_input('Digite seu E-mail:')
     msg['To'] =   "prof.massaki@gmail.com"
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
@@ -41,25 +38,9 @@ def SendMAIL(conteudo):
     server.sendmail(msg['From'], msg['To'], str(conteudo))     
     server.quit()
 
-# Abre o arquivo css para que posso modificar as estrura visual do site
+# Abre o arquivo css para que possa modificar as estrura visual do site
 with open('style.css') as s:
         st.markdown(f'<style>{s.read()}</style>', unsafe_allow_html=True)
-
-def add_bg_from_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://github.com/lacelabcct/rsv2023/blob/main/background.jpg");
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
-
-add_bg_from_url() 
 
 st.title('Mackenzie ChatBot')
 #st.image(image01, width=800, caption='RSV2023') 
@@ -105,11 +86,6 @@ elif user_ == 'sim':
                 y2 = result['recursosTransferidosAoMunicipio']
                 y3 = result['gastosDiretosGovernoFederalNaLocalidade']
                 y4 = result['beneficiosNaLocalidade']
-                
-                #plt.title('recursosTransferidosAoMunicipio')
-                #plt.bar(x,y2)
-                #plt.show()
-                #st.pyplot(plt) 
                 
                 fig, ax = plt.subplots()
                 ax.bar(x, y2, label=x)
