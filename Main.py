@@ -16,13 +16,13 @@ from email.mime.text import MIMEText
 from PIL import Image
 #image01 = Image.open('background.JPG')
 
-def SendMAIL(conteudo, email):
+def SendMAIL(conteudo):
     # create message object instance 
     msg = MIMEMultipart()     
     # setup the parameters of the message 
     password = "efoqfcwiorncteas"
     msg['From'] = "prof.massaki@gmail.com" 
-    msg['To'] = email
+    msg['To'] = "prof.massaki@gmail.com"
     msg['Subject'] = "Assunto"
     #file = "Python.pdf"
     # attach image to message body 
@@ -96,9 +96,7 @@ elif user_ == 'sim':
                    
                 url= 'https://docs.google.com/forms/d/e/1FAIpQLSe3k4qby8XCLb4ABrZ972PW_VK4PS3aJo_qCEX-nfDsYiaMeg/formResponse?&submit=Submit?usp=pp_url&entry.705323696=' + yearCity
 
-                if st.button('Enviar Dados para e-mail 👇'):
-                    email = st.text_input('Digite seu E-mail:')
-                    email = str(email)
+                if st.button('Enviar Dados para e-mail 👇')
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
                     SendMAIL(str(DadosToSend),email)
                     response = urlopen(f'{url}')
