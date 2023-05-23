@@ -98,6 +98,7 @@ elif user_ == 'sim':
 
                 if st.button('Enviar Dados para e-mail 👇'):
                     email = st.text_input('Digite seu E-mail:')
+                    email = str(email)
                     DadosToSend = str(y1) + ', ' + str(y2) + ', ' + str(y3) + ', ' + str(y4)                    
                     SendMAIL(str(DadosToSend),email)
                     response = urlopen(f'{url}')
